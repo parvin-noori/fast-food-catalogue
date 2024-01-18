@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import Loading from "../Loading/loading";
 
-export default function CategoryList() {
+export default function CategoryList({filterItems}) {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -24,14 +24,14 @@ export default function CategoryList() {
           <Loading theme="primary" />
         ) : (
           <ul className="nav">
-            <li className="nav-item">
-              <a href="" className="nav-link">
+            <li className="nav-item" onClick={()=>filterItems()}>
+              <a className="nav-link">
                 همه فست فودها
               </a>
             </li>
             {categories.map((category) => (
-              <li className="nav-item" key={category.id}>
-                <a href="" className="nav-link">
+              <li className="nav-item" key={category.id} onClick={()=>filterItems(category.id)}>
+                <a className="nav-link">
                   {category.name}
                 </a>
               </li>

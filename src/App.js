@@ -19,13 +19,17 @@ function App() {
     setFastFoodItems(response.data);
   };
 
+  const filterItems=(categoryId)=>{
+    fetchData(categoryId)
+  }
+
   useEffect(() => {
     fetchData();
   }, []);
   return (
     <div className="bg-faded-dark wrapper">
       <Header></Header>
-      <CategoryList />
+      <CategoryList filterItems={filterItems}/>
       {loading ?<Loading theme="dark"/>:<FastFoodList fastFoodItems={fastFoodItems}/>}
     </div>
   );
