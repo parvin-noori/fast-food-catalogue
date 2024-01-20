@@ -3,7 +3,7 @@ import axios from "../axios";
 import Loading from "../Loading/loading";
 import SearchBar from "../SearchBar/searchBar";
 
-export default function CategoryList({filterItems}) {
+export default function CategoryList({filterItems,children}) {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -39,7 +39,7 @@ export default function CategoryList({filterItems}) {
               </li>
             ))}
           </ul>
-          <SearchBar/>
+          {children}
          </div>
         )}
       </div>
