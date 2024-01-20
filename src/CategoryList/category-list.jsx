@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import Loading from "../Loading/loading";
+import SearchBar from "../SearchBar/searchBar";
 
 export default function CategoryList({filterItems}) {
   const [categories, setCategories] = useState([]);
@@ -23,7 +24,8 @@ export default function CategoryList({filterItems}) {
         {loading ? (
           <Loading theme="primary" />
         ) : (
-          <ul className="nav">
+         <div className="ps-3 w-100 d-flex align-items-center justify-content-between gap-5">
+           <ul className="nav">
             <li className="nav-item" onClick={()=>filterItems()}>
               <a className="nav-link">
                 همه فست فودها
@@ -37,6 +39,8 @@ export default function CategoryList({filterItems}) {
               </li>
             ))}
           </ul>
+          <SearchBar/>
+         </div>
         )}
       </div>
     </nav>
