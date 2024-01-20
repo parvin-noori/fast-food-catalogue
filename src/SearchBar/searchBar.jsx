@@ -10,7 +10,7 @@ export default function SearchBar({ searchItems }) {
   return (
     <form
       className="search flex-fill d-flex align-items-center"
-      onSubmit={onSubmit}
+      onChange={onSubmit}
     >
       <div className="input-group">
         <input

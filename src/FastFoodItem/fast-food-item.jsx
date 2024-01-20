@@ -1,9 +1,19 @@
 import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
+import "./fast-food-items.css"
 
-export default function FastFoodItem({ name, price, ingredients, imageUrl }) {
+export default function FastFoodItem({
+  name,
+  price,
+  ingredients,
+  imageUrl,
+  delay,
+}) {
   return (
-    <div className="card product-card h-100 border-0 shodow-sm pb-1 mt-5">
+    <div
+      className="card product-card h-100 border-0 shodow-sm pb-1 mt-5 fade-in-horiz"
+      style={{ animationDelay: delay + "s" }}
+    >
       <span className="badge badge-end badge-shadow bg-success fs-md fw-meduim">
         قیمت : {price.toLocaleString()} تومان
       </span>
