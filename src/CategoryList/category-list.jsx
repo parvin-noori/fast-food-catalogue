@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import Loading from "../Loading/loading";
-import SearchBar from "../SearchBar/searchBar";
 
 export default function CategoryList({filterItems,children}) {
   const [categories, setCategories] = useState([]);
